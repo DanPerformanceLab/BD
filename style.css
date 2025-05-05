@@ -1,0 +1,220 @@
+body {
+	margin: 0;
+	font-family: 'Arial';
+	height: 100vh;
+	background-color: black;
+	color: white;
+  }
+	
+	.countdown {
+		text-align: center;
+		display: flex;
+		font-family: 'Orbitron';
+		font-style: normal;
+	  }
+	  
+	  .present {
+		text-align: center;
+		display: none;
+		font-family: 'Meriweather';
+		font-style: italic;
+	  }
+	
+	.countdown {
+		position: relative;
+		width: 100vw;
+		height: 100vh;
+		background-image: url('./img/gettyimages-1180472070-640x640.jpg');
+		background-size: cover;         
+		background-position: center;    
+		background-repeat: no-repeat;
+		color: white;                   
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;   /* vertical centering */
+		align-items: center;       /* horizontal centering */
+		overflow: hidden;
+		font-size: 42px;
+	  }
+	  
+	  /* Optional: dark overlay for better text contrast */
+	  .countdown::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		z-index: 0;
+	  }
+	  
+	  .countdown h1,
+	  .countdown .time {
+		position: relative;
+		z-index: 1;
+	  }
+	
+	.time {
+		font-size: 32px;
+		margin: 30px 0;
+		font-weight: bold;
+		text-align: center;
+		padding: 20px 40px;
+		border-radius: 20px;
+		box-shadow: 0 0 20px rgba(0, 114, 255, 0.5);
+		transition: all 0.3s ease;
+		user-select: none;
+		font-family: 'Orbitron';
+		font-style: normal;
+	}
+
+	.fade-out {
+		opacity: 0;
+		transition: opacity 1s ease;
+	  }
+	  
+	  .fade-in {
+		opacity: 1;
+		display: block !important;
+		transition: opacity 1s ease;
+	  }
+
+
+	  #balloon-container {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		pointer-events: none;
+		z-index: 999;
+	  }
+	  
+	  .balloon {
+		position: absolute;
+		width: 40px;
+		height: 60px;
+		background: red;
+		border-radius: 50% 50% 45% 45%;
+		animation: fly-up 6s ease-in forwards;
+	  }
+	  
+	  .balloon::after {
+		content: '';
+		position: absolute;
+		bottom: -20px;
+		left: 50%;
+		width: 2px;
+		height: 20px;
+		background: white;
+		transform: translateX(-50%);
+	  }
+	  
+	  @keyframes fly-up {
+		0% {
+		  transform: translateY(0);
+		  opacity: 1;
+		}
+		100% {
+		  transform: translateY(-110vh);
+		  opacity: 0;
+		}
+	  }
+	  
+	  
+	  
+	
+	.present {
+		position: relative;
+		z-index: 10;
+		font-size: 38px;
+		color: white;
+		background-color: black;
+		padding: 20px 40px;
+		border-radius: 20px;
+		box-shadow: 0 0 20px rgba(0, 114, 255, 0.5);
+	}
+
+	.present-content {
+		position: relative;
+  		width: 100vw;       /* Full screen width */
+  		height: 100vh;      /* Full screen height */
+  		margin: 0;
+  		padding: 0;
+  		overflow: hidden;
+	  }
+	  
+	  .present-image {
+		width: 100vw;        /* Full viewport width */
+  		height: 100vh;       /* Full viewport height */
+  		object-fit: cover;   /* Crop/scale to fill without distortion */
+  		display: block;
+  		margin: 0;
+  		padding: 0;
+	  }
+	  
+	  .present-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.5);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		padding: 20px;
+		box-sizing: border-box;
+		z-index: 2; /* Make sure it's above images and background */
+	  }
+	  
+	  .floating-img {
+		position: absolute;
+		width: 300px; /* adjust size as needed */
+		height: auto;
+		z-index: 1; /* Behind the text but in front of background */
+		opacity: 0.9;
+		pointer-events: none; /* Prevent blocking any clicks */
+	  }
+	  
+	  .img-left {
+		top: 10%;
+		left: 5%;
+	  }
+	  
+	  .img-right {
+		bottom: 8%;
+		right: 3%;
+	  }
+	  
+	  .present-image {
+		position: absolute;
+		width: 100vw;
+		height: 100vh;
+		object-fit: cover;
+		z-index: 0; /* Background layer */
+	  }
+	  
+	  
+	  .voucher {
+		font-size: 32px;
+		margin-top: 20px;
+		background-color: gold;
+		color: black;
+		font-weight: bold;
+		padding: 15px 24px;
+		border-radius: 12px;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+		justify-content: center;
+		font-family: 'Orbitron';
+		font-style: normal;
+	  }
+
+	  .lino {
+		font-weight: bold;
+		font-size: 44px;
+		margin: 5px;
+	  }
